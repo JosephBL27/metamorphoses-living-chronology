@@ -1,0 +1,77 @@
+/*
+ * Design tokens.
+ *
+ * One home for the visual system's primitives. The first block is the palette
+ * documented in DESIGN.md; the blocks after it are the tonal ramps this
+ * interface actually needs — an engraved parchment surface cannot be built
+ * from eight flat colours, and a ramp declared once is better than the same
+ * near-value written out forty times.
+ *
+ * Loaded before styles.css so every rule can reference these.
+ */
+
+:root {
+  /* --- documented palette (DESIGN.md) ---------------------------------- */
+  --lapis-night: #101d38;
+  --lapis-deep: #09152b;
+  --lapis-field: #173a62;
+  --mineral-red: #d85a42;
+  --sun-gold: #f0b84b;
+  --verdigris: #63a69f;
+  --vellum: #f4ecdd;
+  --vellum-bright: #fffaf0;
+  --ink: #16191d;
+  --fog: #b9cad2;
+  --fog-dim: #8ea6b4;
+  --line-dark: rgba(244, 236, 221, .18);
+  --line-ink: rgba(22, 25, 29, .22);
+
+  /* --- typography ------------------------------------------------------- */
+  --display: "Bodoni Moda", Didot, Georgia, serif;
+  --body: Manrope, "Avenir Next", sans-serif;
+  --narrow: "Archivo Narrow", "Arial Narrow", sans-serif;
+
+  /* --- motion and metrics ----------------------------------------------- */
+  --ease-turn: cubic-bezier(.16, 1, .3, 1);
+  --header-h: 72px;
+
+  /* --- engraved gold: the linework ramp on the dark plate ---------------- */
+  --engrave: rgba(226, 186, 108, .5);
+  --engrave-soft: rgba(226, 186, 108, .26);
+  --engrave-faint: rgba(226, 186, 108, .13);
+  --engrave-line: rgba(235, 202, 136, .58);
+  --engrave-star: rgba(255, 244, 218, .95);
+
+  /* --- parchment: the reading surface and its ink ramp ------------------- */
+  --parchment: #f1e5cb;
+  --parchment-bright: #f4e9d2;
+  --parchment-rule: rgba(98, 67, 29, .23);
+  --parchment-rule-strong: rgba(98, 67, 29, .38);
+  --parchment-wash: rgba(122, 79, 22, .06);
+  --parchment-wash-edge: rgba(146, 96, 24, .38);
+
+  --parchment-ink: #211d17;      /* body copy on parchment            */
+  --parchment-ink-2: #2c241a;    /* secondary body copy               */
+  --parchment-ink-3: #443724;    /* tertiary notes                    */
+  --parchment-ink-4: #6a5636;    /* captions and disclaimers          */
+  --parchment-ink-dark: #2a1f0c; /* text on a gold fill               */
+
+  --parchment-gold-1: #8a5a17;   /* small-cap labels                  */
+  --parchment-gold-2: #7a4f16;   /* eyebrow rules                     */
+  --parchment-gold-3: #6d4310;   /* links and inline emphasis         */
+  --parchment-gold-4: #5b3a10;   /* engraved strokes on gold          */
+  --parchment-gold-edge: #a9741f;/* active border on parchment        */
+}
+
+/* --- the sea chart -------------------------------------------------------
+   The chart's ground. Declared here rather than left as an inline fallback:
+   an undefined custom property resolves to nothing for any tool reading the
+   stylesheet, which made the contrast checker score the chart's text against
+   a phantom white background. */
+:root {
+  --chart-sea: #0a2038;
+  --chart-land: #e8dcbe;
+  --chart-coast: #6d5426;
+  --chart-ink: #2b1d09;
+}
+

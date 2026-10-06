@@ -1,0 +1,13 @@
+# Only the site is uploaded.
+.vercel
+.env
+.env.*
+*.local
+node_modules
+dist
+output
+test-results
+playwright-report
+# Visual regression baselines have no role at runtime.
+tests
+.DS_Store
